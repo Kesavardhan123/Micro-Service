@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+ 
+  frontend:
+    image: pizzafrontendimagenew
+    build: 
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5902:8080"
+    depends_on:
+      - backend
+  backend:
+    image: pizzabackendimagenew
+    build: 
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "5900:8080"
